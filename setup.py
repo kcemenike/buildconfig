@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 from distutils.core import setup
 setup(
   name = 'buildconfig',
