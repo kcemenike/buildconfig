@@ -355,8 +355,8 @@ class BuildConfig(SchemaDict):
         with open(path, 'r') as fp:
             res = cls.from_dict(json.load(fp))
             for i in res.targets.values():
-                i.params['config_file'] = path
-                i.params['config_dir'] = os.path.dirname(path)+'/'
+                i.params['config_file'] = os.path.abspath(path)
+                i.params['config_dir'] = os.path.dirname(os.path.abspath(path))+'/'
             return res
 
     @classmethod
@@ -364,8 +364,8 @@ class BuildConfig(SchemaDict):
         with open(path, 'r') as fp:
             res = cls.from_dict(yaml.load(fp))
             for i in res.targets.values():
-                i.params['config_file'] = path
-                i.params['config_dir'] = os.path.dirname(path)+'/'
+                i.params['config_file'] = os.path.abspath(path)
+                i.params['config_dir'] = os.path.dirname(os.path.abspath(path))+'/'
             return res
 
     @classmethod
