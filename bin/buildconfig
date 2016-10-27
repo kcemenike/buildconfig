@@ -51,7 +51,7 @@ if len(sys.argv) < 3:
     sys.exit(0)
 
 target = config.get_target_by_name(sys.argv[2])
-config.params['file'] = sys.argv[1]
+config.params['file'] = os.path.abspath(sys.argv[1])
 for command in target.get_commands():
     perform_command(command)
 
