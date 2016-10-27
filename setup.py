@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'buildconfig',
-    packages=find_packages(exclude=('buildconfig.yaml.*')),
+    packages=find_packages(exclude=('buildconfig.yaml._yaml3*')),
     scripts=['bin/buildconfig'],
     version = '0.2',
     description = '.buildconfig edit build integration tool',
