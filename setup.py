@@ -1,10 +1,11 @@
 # -*- coding: utf8 -*-
 
-from distutils.core import setup
+#from distutils.core import setup, find_packages
+from setuptools import setup, find_packages
 
 setup(
     name = 'buildconfig',
-    packages = ['buildconfig'],
+    packages=find_packages(exclude=('buildconfig.yaml.*')),
     scripts=['bin/buildconfig'],
     version = '0.2',
     description = '.buildconfig edit build integration tool',

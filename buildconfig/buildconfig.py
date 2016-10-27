@@ -10,11 +10,11 @@ import os
 import json
 import hashlib
 import fnmatch
-import yaml
 import re
 import collections
 import pipes
 import shlex
+import yaml
 
 
 
