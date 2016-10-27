@@ -4,10 +4,13 @@ from setuptools import setup, find_packages
 import sys
 
 packages = find_packages()
-if sys.version_info.major < 3:
-    packages.pop('buildconfig.yaml._yaml3', None)
-else:
-    packages.pop('buildconfig.yaml._yaml2', None)
+try:
+    if sys.version_info.major < 3:
+        packages.remove('buildconfig.yaml._yaml3')
+    else:
+        packages.remove('buildconfig.yaml._yaml2')
+except:
+    pass
 
 setup(
     name        = 'buildconfig',
