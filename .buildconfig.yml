@@ -1,5 +1,9 @@
 root: true
 targets:
+    'easy_install':
+        shell: |
+            export PATH=/usr/local/bin/python:$PATH
+            easy_install .
     'deploy pypitest':
         cmd: |
             python setup.py sdist upload -r pypitest
