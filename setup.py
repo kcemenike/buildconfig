@@ -13,6 +13,10 @@ setup(
     name        = 'buildconfig',
     packages    = packages,
     scripts     = ['bin/buildconfig'],
+    package_data= {
+        '': ['runpersistent/*.sh']
+    },
+    include_package_data=True,
     version     = '0.2',
     description = '.buildconfig edit build integration tool',
     author      = 'Moritz Möller',
