@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
   name = 'buildconfig',
   packages = ['buildconfig'],
-  version = '0.1',
+  version = '0.2',
   description = '.buildconfig cli tool',
   author = 'Moritz Möller',
   author_email = 'mm@mxs.de',
