@@ -4,6 +4,13 @@ targets:
         shell: |
             export PATH=/usr/local/bin/python:$PATH
             easy_install .
+
     'deploy pypitest':
-        cmd: |
+        shell: |
+            export PATH=/usr/local/bin/python:$PATH
             python setup.py sdist upload -r pypitest
+
+    'deploy pypi':
+        shell: |
+            export PATH=/usr/local/bin/python:$PATH
+            python setup.py sdist upload -r pypi

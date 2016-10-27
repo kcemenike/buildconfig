@@ -17,7 +17,7 @@ setup(
         '': ['runpersistent/*.sh']
     },
     include_package_data=True,
-    version     = '0.2',
+    version     = '0.3',
     description = '.buildconfig edit build integration tool',
     author      = 'Moritz Möller',
     author_email= 'mm@mxs.de',
