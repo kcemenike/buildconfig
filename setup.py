@@ -5,9 +5,9 @@ import sys
 
 packages = find_packages()
 if sys.version_info.major < 3:
-    packages.remove('buildconfig.yaml._yaml3')
+    packages.pop('buildconfig.yaml._yaml3', None)
 else:
-    packages.remove('buildconfig.yaml._yaml2')
+    packages.pop('buildconfig.yaml._yaml2', None)
 
 setup(
     name        = 'buildconfig',
@@ -17,7 +17,7 @@ setup(
         '': ['runpersistent/*.sh']
     },
     include_package_data=True,
-    version     = '0.3',
+    version     = '0.4',
     description = '.buildconfig edit build integration tool',
     author      = 'Moritz Möller',
     author_email= 'mm@mxs.de',
