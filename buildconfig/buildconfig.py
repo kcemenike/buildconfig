@@ -326,6 +326,7 @@ class BuildTarget(SchemaDict):
 
 class BuildConfig(SchemaDict):
     schema = {
+        'root': bool,
         'env': { str: str },
         'params': { str: str },
         'targets': { str : BuildTarget }
@@ -351,6 +352,7 @@ class BuildConfig(SchemaDict):
         with open(path, 'r') as fp:
             res = cls.from_dict(json.load(fp))
             for i in res.targets.values():
+                i.params['config_file'] = path
                 i.params['config_dir'] = os.path.dirname(path)+'/'
             return res
 
@@ -359,6 +361,7 @@ class BuildConfig(SchemaDict):
         with open(path, 'r') as fp:
             res = cls.from_dict(yaml.load(fp))
             for i in res.targets.values():
+                i.params['config_file'] = path
                 i.params['config_dir'] = os.path.dirname(path)+'/'
             return res
 
@@ -377,6 +380,8 @@ class BuildConfig(SchemaDict):
                     config = BuildConfig.load_yml(name)
             if config:
                 res = BuildConfig.merge(res, config)
+                if config.root:
+                    break
             path = os.path.dirname(path)
         return res
 

@@ -1,0 +1,5 @@
+root: true
+targets:
+    'deploy pypitest':
+        cmd: |
+            python setup.py sdist upload -r pypitest
